@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>//crtl+D選取多個同時改動
+        var intScore = 95;//數值
+        var steLevel = "";//字串
+
+        if (intScore < 0 || intScore > 100) {//先擋掉會發生的錯誤(效能好)
+            console.log("錯誤!不在有效範圍");
+        } else{
+         if (intScore >= 80 && intScore <= 100) {
+            strLevel = "甲";
+        } else if (intScore >= 70 && intScore <= 79) {
+            strLevel = "乙";
+        } else if (intScore >= 60 && intScore <= 69) {
+            strLevel = "丙";
+        } else {
+            strLevel = "丁";
+            // else (
+            // console.log("成績錯誤")     
+        }
+        console.log(`分數:${intScore}=>成績等級為${steLevel}等`);
+    }
+    </script>
+        
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //document.write
+        //參數1:建立迴圈變數，並且設定初始值
+        //參數2:執行迴圈的條件
+        //迴圈變數的增減值
+        //i=i+1=>i++
+        for (var i = 1; i <= 5; i = i + 1) {
+            document.write("Hi<br>");
+        }
+        document.write("<hr>");
+
+        for (var i = 1; i <= 5; i = i + 1) {
+            document.write(i + "<br>");
+        }
+        document.write("<hr>");
+        //1-10的奇數:1,3,5
+        //寫法1:奇偶數檢查(每個值都檢查)
+        for (var i = 1; i <= 10; i++) {
+            if (i % 2 == 1) {
+                document.write(i + ",");
+            }
+        }
+        document.write("<hr>");
+        //寫法2:等差為2
+        for (var i = 1; i <= 10; i += 2) {
+            document.write(i + ",");
+        }
+
+    </script>
+</body>
+
+</html>

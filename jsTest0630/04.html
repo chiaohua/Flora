@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var ticketType = 0;//票價種類
+        var ticketPrice = 0;//票價價格
+        var ticketName = "";//票價名稱
+        var ticketNum = 2;//票張數
+        var errFlag = "N";//存放發生錯誤
+
+        switch (ticketType) {
+            default:
+                console.log("票種不存在")
+                errFlag = "Y";//跟宣告的不同就好
+                break;
+            case 1:
+                ticketPrice = 500;
+                ticketName = "全票";
+                break;
+            case 2:
+                ticketPrice = 500 * 0.8;
+                ticketName = "優待票";
+                break;
+            case 3:
+                ticketPrice = 500 * 0.8 * 0.7;
+                ticketName = "敬老票";
+                break;
+        }
+        if (errFlag == "N") {
+            console.log(`${ticketName}${ticketNum}張,票價為:${ticketPrice * ticketNum}`);
+        }
+    </script>
+</body>
+
+</html>
