@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        for (var i = 1; i <= 5; i++) {
+            for (j = 1; j <= i; j++) {
+                document.write("*")
+            }
+            document.write("<br>");
+        }
+        for (var a = 1; a <= 9; a++) {
+            for (var b = 1; b <= 9; b++) {//1*1=01
+                document.write(`${a}*${b}=`);
+                if (a * b < 10) {
+                    document.write("0");
+                }
+                document.write(a * b + "&nbsp;&nbsp;&nbsp;");//空白
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+
+</html>
