@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="result">結果</p>
+    <script>
+
+        var yes = 0;
+        var no = 0;
+        var tot = 0;
+        var ave = 0.0;
+
+
+        while (1) {
+            var score = prompt("請輸入分數");
+
+            if (score.trim() == "") {
+                alert("不可輸入空白");
+                continue;
+            }
+
+            if (score == "-1") {
+                alert("成績輸入結束")
+                break;
+            }
+            if (score == "") {
+                alert("不能空白，請重新輸入");
+                continue;
+            } else if (score < 0 || score > 100) {
+                alert("不是有效範圍，請重新輸入");
+                continue;
+            }  score = Number(score);
+            //檢查是否為數字
+            if (isNaN(score)) {
+                alert("非數字，請重新輸入");
+                continue;
+            }
+
+            if (score >= 60) {
+                yes++;
+            } else {
+                no++;
+            }
+            tot = tot + score;
+        } if (yes + no > 0) {
+
+            ave = tot / (yes + no);
+        }
+
+        var result = document.getElementById("result");
+        result.innerHTML = `
+        　及格:${yes}人<br>
+        不及格:${no}人<br>
+        　總分:${tot}分<br>
+        總平均:${ave.toFixed(2)}分`
+            ;
+    </script>
+</body>
+
+</html>

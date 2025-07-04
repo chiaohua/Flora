@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="result">結果</p>
+    <script>
+        var yes = 0;
+        var no = 0;
+        var tot = 0;
+        var avg = 0.0;
+
+        while (1) {
+            var score = prompt("請輸入分數:");
+
+            if (score == null) {
+                yes = 0;
+                no = 0;
+                tot = 0;
+                avg = 0;
+                alert("您按了取消，即將結束");
+                break;
+            }//去除資料前後的空白=>trim()
+            if (score.trim() == "") {
+                alert("不可輸入空白");
+                continue;
+            }
+
+            if (score == "-1") {
+                alert("成績輸入結束")
+                break;
+            }
+            //字串轉數字
+            score = Number(score);
+            //檢查是否為數字
+            if (isNaN(score)) {
+                alert("非數字，請重新輸入");
+                continue;
+            } else if (score < 0 || score > 100) {
+                alert("不是有效範圍 0-100之間");
+                continue;
+            }
+
+            if (score >= 60) {
+                yes++;
+            } else {
+                no++;
+            }
+            tot = tot + score;
+        }//平均
+        if (yes + no > 0) {
+
+            avg = tot / (yes + no);
+        }
+
+        var result = document.getElementById("result");
+        result.innerHTML = `
+        　及格:${yes}人<br>
+        不及格:${no}人<br>
+        　總分:${tot}分<br>
+        總平均:${avg.toFixed(2)}分`
+            ;
+
+
+
+
+    </script>
+</body>
+
+</html>

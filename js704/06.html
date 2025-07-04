@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var rd = Math.random() * 100;
+         rd=Math.floor(rd);
+
+        while (1) {
+            var num = prompt("1-100猜一個數字:");
+
+            if (rd == num) {
+                alert("猜對了");
+                break;
+
+            } else if (num < rd) {
+                alert("太小了"+rd)
+                continue;
+            }
+            else if (num > rd) {
+                alert("太大了"+rd);
+                continue;
+            }
+        }
+    </script>
+</body>
+
+</html>

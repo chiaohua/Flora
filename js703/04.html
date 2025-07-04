@@ -8,10 +8,12 @@
 </head>
 
 <body>
-    <label for="">數值1</label>
+    <!-- 標籤 -->
+    <label for="n1">數值1</label>
+    <!-- 文字方塊 -->
     <input type="number" id="n1">
     <br>
-    <label for="">數值2</label>
+    <label for="n2">數值2</label>
     <input type="number" id="n2">
     <button onclick="tot()">加總</button>
     <br>
@@ -21,11 +23,19 @@
         //建立加總函式
         function tot() {
             //取得數值1的位置
-            var n1 = document.getElementById("n1").value;
-            //取得數值1的內容，顯示在指定的位置
+            var n1 = document.getElementById("n1");
+            //取得數值2的位置
 
-            var n2 = document.getElementById("n2").value;
-            document.getElementById("result").textContent = n1+n2;
+            //字串轉換數值
+            //console.log(typeof parseInt(n1.value));
+
+            //var strNum=123;
+            //console.log(typeof strNum.toString());
+
+
+            var n2 = document.getElementById("n2");
+            //取得數值1的內容，顯示在指定的位置
+            document.getElementById("result").textContent = parseInt (n1.value) + parseInt(n2.value);
         }
     </script>
 </body>
