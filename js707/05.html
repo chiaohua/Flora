@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr1 = [1, 2, "a", 4, 5, "12345"];
+        //1
+        for (let i = 0; i < arr1.length; i++) {
+            if (typeof arr1[i] === "string") {
+                console.log(arr1[i]);
+            }
+        }
+        //2
+        for (let n of arr1) {
+            if (typeof n == "string") {
+                console.log(n);
+            }
+        }
+        //3
+        arr1.forEach((arr1) => {
+            if (typeof arr1 == "string")
+                console.log(arr1);
+        })
+        //4
+        arr1.map((n) => {
+            if (typeof n == "string")
+                console.log(n);
+        })
+
+        let arr2 = [5, 60, 3, 90, 33, 1, 100];
+        let max = arr2[0];
+        let min = arr2[0];
+        //1
+        for (let i = 1; i < arr2.length; i++) {//i=i+1每個值都要找到的意思
+            if (arr2[i] > max) {
+                max = arr2[i];
+            } else if (arr2[i] < min) {
+                min = arr2[i];
+            }
+        } console.log(`max=${max},min=${min}`);
+        //2
+        max = arr2[0];
+        mim = arr2[0];
+        for (let n of arr2) {
+            if (n > max) {
+                max = n;
+            } else if (n < max) {
+                min = n;
+            }
+        } console.log(`max=${max},min=${min}`);
+        //3
+        max = arr2[0];
+        mim = arr2[0];
+        arr2.forEach((n) => {
+            if (n > max) {
+                max = n;
+            } else if (n < max) {
+                min = n;
+            }
+        })
+        console.log(`max=${max},min=${min}`);
+        //4 map
+        max = arr2[0];
+        mim = arr2[0];
+        arr2.map((n) => {
+            if (n > max) {
+                max = n;
+            } else if (n < max) {
+                min = n;
+            }
+        })
+        console.log(`max=${max},min=${min}`);
+        //5 sort
+        arr2.sort((a, b) => {
+            return a - b;//遞增 b-a遞減        
+        });
+        console.log("遞增排序後" + arr2);
+        console.log(`max=${arr2[arr2.length-1]},max=${arr2[0]}`);
+
+        //數學類別
+        //最大值
+        //最小值
+        max=Math.max(...arr2);
+        min=Math.min(...arr2);
+        console.log(`max=${max},min=${min}`);
+
+
+    </script>
+</body>
+
+</html>

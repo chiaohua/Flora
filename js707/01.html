@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h2>猜數字</h2>
+
+<body>
+    <div id="game">
+        請輸入任意數字:(若要離開，請輸入-1)
+        <input type="number" id="txtNo">
+        <button onclick="btnClick()">確定</button>
+    </div>
+
+
+    <p id="result"></p>
+    <button id="rePlay" onclick="btnReset()" style="display:none;">再玩一次</button>
+    <!-- 再玩一次 -->
+
+    <script>
+        //取得遊戲位置
+        let game = document.getElementById("game");
+        //取得再玩一次按鈕
+        let rePlay = document.getElementById("rePlay");
+        //取得顯示位置
+        let result = document.getElementById("result");
+
+        let rd = Math.floor(Math.random() * 100) + 1;
+        let min = 1;
+        let max = 100;
+        count = 0;
+        let txtNo = "";//公用變數 可跨區用
+
+
+        function btnClick() {
+            count++;
+            let txtNo = document.getElementById("txtNo");
+            let keyNum = parseInt(txtNo.value);
+            //檢查空白
+            if (isNaN(keyNum)) {
+                alert(`不能空白，請重新輸入`);
+                txtNo.focus();
+                return;
+            }
+            //檢查是否結束遊戲
+            if (keyNum = -1) {
+                return;
+            }
+
+            if (keyNum === rd) {
+                result.innerHTML = `第${count}次,Bingo<br>`;
+                //隱藏遊戲區
+                game.style.display = "none"
+                //顯示再玩一次
+                rePlay.style.display = "block";
+
+                return;//結束目前階段的事情
+
+            } if (keyNum > rd) {
+                max = keyNum;
+                result.innerHTML += `第${count}次,太大了，提示:${min}-${max}<br>`;
+            } else {
+                min = keyNum;
+                result.innerHTML += `第${count}次,太小了，提示:${min}-${max}<br>`;
+            }
+            //清除文字上方內容
+            txtNo.value = "";
+            //指定游標到文字方塊上
+            txtNo.focus();
+
+
+        }
+        //再玩一次
+        function btnReset() {
+            txtNo.value = "";
+            result.innerHTML = "";
+            min = 1;
+            ma1x = 100;
+            count = 0;
+
+            //取亂數
+            rd = Math.floor(Math.random() * 100) + 1;
+            console.log(rd);
+
+            game.style.display = "block";
+            rePlay.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

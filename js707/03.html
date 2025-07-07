@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>陣列常用的方法</h2>
+    <hr>
+
+
+    <script>
+        //建立一個陣列，存放任意五個值
+        let arr1 = [1, 2, 3, 4];
+        let arr2 = [1, 2, 3, 4, 5, 6, 7];
+        let arr3 = [10, 200, 30];
+        console.log("未排序前:" + arr3);
+        //使用迴圈，顯示陣列中的內容 
+        for (let i = 0; i <= 4; i++) {
+            console.log(arr1[i]);//如果陣列內容多可用這個操作
+        }
+        for (let i = 0; i < arr2.length; i++) {//不須改長度就會按照arr跑
+            console.log(arr2[i]);//如果陣列內容多可用這個操作
+        }
+
+        arr3.sort((a, b) => {
+            return a - b;//遞增 b-a遞減        
+        });
+        console.log("遞增排序後" + arr3);
+    </script>
+
+</body>
+
+</html>

@@ -10,7 +10,9 @@
 <body>
     <script>
         var rd = Math.random() * 100;
-         rd=Math.floor(rd);
+        rd = Math.floor(rd);
+        var min = 1;
+        var max = 100;
 
         while (1) {
             var num = prompt("1-100猜一個數字:");
@@ -18,14 +20,19 @@
             if (rd == num) {
                 alert("猜對了");
                 break;
+            } if (num == null) {
+                alert("您按了取消，即將結束");
+                break;
 
             } else if (num < rd) {
-                alert("太小了"+rd)
-                continue;
+                alert(`太小了!提示:${num}-${max}`);
+                min = num;
+                max = max;
             }
             else if (num > rd) {
-                alert("太大了"+rd);
-                continue;
+                alert(`太大了!提示:${min}-${num}`);
+                max = num;
+                min = min;
             }
         }
     </script>
