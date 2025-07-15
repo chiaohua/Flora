@@ -40,11 +40,12 @@
             if(str.trim().length==0){//先去掉空白在長度
                 return false;
             }
-            if (str[0] === str[0].toUpperCase()) {//左小a右大A
+            //if (str[0] === str[0].toUpperCase()) {//左小a右大A
                 return true;
-            } else {
+            //} else {
                 return false;
-            }
+            //}
+            return str[0]===str[0].toUpperCase();//簡化
 
         }
         console.log(isUpperCase("ABCD")); 		// returns true
