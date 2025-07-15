@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 題目：寫一個函式 printMany ，輸出1, 2, 3, ..., 100
+        function printMany() {//建立
+            for (let i = 1; i <= 100; i++) {
+                console.log(i);
+            }
+        }
+        //printMany();//呼叫
+
+        //題目：寫一個函式 printEvery3 ，輸出1, 4, 7, ..., 88
+        function printEvery3() {
+            for (let i = 1; i <= 88; i += 3) {
+                console.log(i);
+            }
+        }
+        //printEvery3();
+        //題目：寫一個函式stars ，輸出連續N個*
+        function stars(n) {
+            let result = "";//給空值
+            for (let i = 1; i <= n; i++) {
+                result = result + "*";//顯示*字不能在con裡
+            }
+            console.log(result);//放外面才不會一直跑
+        }
+        stars(10);
+        //題目：寫一個函式 isUpperCase ，檢查第一個字母是否為大寫
+
+        function isUpperCase(str) {
+            //檢查是否有資料
+            if(str.trim().length==0){//先去掉空白在長度
+                return false;
+            }
+            if (str[0] === str[0].toUpperCase()) {//左小a右大A
+                return true;
+            } else {
+                return false;
+            }
+
+        }
+        console.log(isUpperCase("ABCD")); 		// returns true
+        console.log(isUpperCase("")); 			// returns false
+        console.log(isUpperCase("aBCD"));		// returns false
+        //題目：寫一個函式 isAllUpperCase，檢查所有字母是否為大寫
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

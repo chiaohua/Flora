@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>產生樂透號碼</h2>
+    <p>
+        <!-- get(tp,firstmax,firstno,secmax,secno) -->
+         <!-- 1.種類2.最大值3.取幾個數4.第二區最大值5.第二區取幾個數 -->
+        <button onclick="getLott(1,38,6,8)">威力彩</button>
+        <button onclick="getLott(2,49,6,49)">大樂透</button>
+        <button onclick="getLott(3,39,5)">今彩539</button>
+    </p>
+
+    <p id="sortBefore">排序前號碼</p>
+    <p id="sortAfter">排序後號碼</p>
+    <p id="secNo">第二區號碼</p>
+
+    <script src="./lott2.js"></script>
+
+</body>
+
+</html>
