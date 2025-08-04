@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //函數的回傳值再討論
+        let checkscore = (score) => {
+            if (score < 0 || score > 100) {
+                console.log("超出分數有效範圍");
+                return;//超過結束函式
+            }
+            //檢查是否及格
+            if (score >= 60) {
+                console.log("及格了")
+            } else {
+                console.log("不及格")
+            }
+        }
+
+        checkscore(100);
+
+        //傳回值超過二個以上，使用陣列或物件
+        //練習：建立一個addsub()函式，計算和與差，並且傳回和與差二個值
+        let addsub = (n1, n2) => {
+            let add = n1 + n2;
+            let sub = n1 - n2;
+            return [add, sub];
+
+        }
+        let result = addsub(5, 3);
+        console.log(result);
+        console.log(`二數相加為${result[0]}`);
+        console.log(`二數相減為${result[1]}`);
+
+
+    </script>
+</body>
+
+</html>

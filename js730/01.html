@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*複合式規則*/
+        form span {
+            color: rgb(255, 15, 15);
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <!-- 文字方塊 -->
+        <label for="uid"><span>*</span>帳號</label>
+        <!-- required必須填寫資料 -->
+        <input type="text" id="uid"><br>
+        <!-- 密碼 -->
+        <label for="upw"><span>*</span>密碼</label>
+        <input type="password" id="upw"><br>
+        <!-- err訊息 -->
+        <span id="msg"></span><br>
+
+        <!-- 送出 -->
+        <input type="submit" value="確認送出">
+        <!-- 重設 -->
+        <input type="reset" value="重新填寫">
+    </form>
+    <script>
+        let uid = document.querySelector(`#uid`);
+        let upw = document.querySelector(`#upw`);
+        let msg = document.querySelector(`#msg`);
+        let btn = document.querySelector(`#btn`);
+
+        btn.addEventListener(`click`, function () {
+            //存放所有err訊息
+            let strMsg = "";
+            //帳號檢查
+            if (uid.value.length === 0) {
+                strMsg += "帳號不能空白<br>";
+            }
+            //密碼檢查
+            if(upw.value.length ===0){
+                 strMsg += "密碼不能空白<br>";
+            }
+            msg.innerHTML=strMsg;
+            msg.style.color="green";
+
+        })
+    </script>
+    <div>
+
+    </div>
+</body>
+
+</html>

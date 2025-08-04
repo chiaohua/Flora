@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //計算梯形面積(上+下)*高/2
+        //傳統
+        function getArea1(top, bottom, height) {
+            let area = (top + bottom) * height / 2;
+            return `梯形面積1=${area}`;
+        }
+        console.log(getArea1(10, 20, 10));
+
+        //匿名函式
+        let getArea2 = function (top, bottom, height) {
+            let area = (top + bottom) * height / 2;
+            return `梯形面積2=${area}`;
+        }
+        console.log(getArea2(10, 20, 10));
+        //箭頭函式
+
+        let getArea3 = (top, bottom, height) => {
+            let area = (top + bottom) * height / 2;
+            return `梯形面積3=${area}`;
+        }
+        console.log(getArea3(10, 20, 10));
+
+        //預設參數
+        let getArea4 = (top, bottom, height =10) => {//先給值
+            let area = (top + bottom) * height / 2;
+            return `梯形面積4=${area}`;
+        }
+        console.log(getArea4(10, 20,5));
+        //高度有給值 不使用預設參數
+        console.log(getArea4(10, 20,));
+        //沒給值使用預設參數
+
+
+        //具名參數
+        let getArea5 = ({top, bottom, height =10}) => {//先給值 [接收]
+            let area = (top + bottom) * height / 2;
+            return `梯形面積5=${area}`;
+        }
+        console.log(getArea5({bottom:10,top:20,height:5}));//加{}使用物件型別[接收]
+    </script>
+</body>
+
+</html>

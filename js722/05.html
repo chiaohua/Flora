@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //將函式當作其它函式的參數
+        let sayHi = () => {
+            return `Hi,`;
+        }
+        //函式中呼叫另一個函式
+        //1.
+        let welcome = (name) => {
+            console.log(sayHi() + name);
+        }
+        welcome("Flora");
+        //2.
+
+        let welcome2 = (funName, name) => {
+            console.log(funName() + name);
+        }
+        welcome2(sayHi, "Peter");
+
+
+        //將函式當作其它函式的傳回值
+
+    </script>
+</body>
+
+</html>

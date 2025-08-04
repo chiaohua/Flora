@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //建立一個add()的函式，計算所有參數的總和
+
+
+        let add = (...number) => {
+            let tot = 0;
+            for (let n of number) {
+                tot += n;
+            }
+            //for(let n=0;n<number.lrnght;n++){
+            // tot+=number[n];
+            //}
+            return tot;
+        }
+        //其餘陣列參數
+         let add2 = (...[x,y,z=0]) => {
+            console.log(x);
+            console.log(y);
+            console.log(z);
+            return x+y+z;
+        }
+
+        console.log(add2(5, 3));
+        console.log(add2(5, 3, 8));
+        console.log(add2(5, 3, 8, 10));
+    </script>
+</body>
+
+</html>

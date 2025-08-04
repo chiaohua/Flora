@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    #resultUL li{
+        list-style:none ;
+    }
+</style>
+</head>
+
+<body>
+    <!-- 選項按鈕:複選(checkbox) -->
+    <form>
+        科目:
+        <input type="checkbox" name="subject" value="html">HTML
+        <span><input type="checkbox" name="subject" value="css"></span>CSS
+        <input type="checkbox" name="subject" value="js">JS
+        <input type="button" id="btn" value="送出">
+    </form>
+    <p id="result"></p>
+    <script>
+        let result = document.querySelector("#result");
+        let btn = document.querySelector(`#btn`);
+        btn.addEventListener("click", function () {
+            result.innerHTML = "";
+            result.style.color = "red";
+            let subject = document.getElementsByName("subject");
+            //console.log(subject);
+            //逐一檢查是否被選取
+            for (let i = 0; i < subject.length; i++) {
+                if (subject[i].checked) {
+                    console.log(subject[i].value);
+                    result.innerHTML += subject[i].value + "<br>";
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

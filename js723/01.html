@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //將函式當作其它函式的傳回值=>就是指傳回值的內容是一個函式
+        let sayHi = (name) => {
+            return function () {
+                console.log(name);
+            }
+        }
+        sayHi("hihihihihi")();//要得到return的內容 加()
+
+
+        let sayHi2 = (name) => {
+            return console.log(name);
+        }
+        sayHi2("popopopopo");
+
+
+        let sayHi3 = (name) => {
+            return function (str1) {
+                console.log("hi," + name +",", str1);
+            }
+        }
+        sayHi3("yoyoyyoyo")("bobo");
+
+    </script>
+
+</body>
+
+</html>

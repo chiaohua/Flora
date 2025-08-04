@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //建立一個名稱為User函式做為物件的'樣板'，內有name與age二個屬性，showMsg()方法
+        function User(myName, myAge, myH, myW) {
+            this.name = myName;
+            this.age = myAge;
+            this.heigh = myH;
+            this.weight = myW;
+
+            this.showBMI=function(){
+                let bmi=(myW/Math.pow(myH/100,2)).toFixed(2);
+                console.log(bmi);
+            }
+        }
+        //使用物件樣板，必須用new關鍵字
+        let user1 = new User(`毛毛`, 27, 160, 50);
+        console.log(user1);
+        user1.showBMI();
+        let user2 = new User(`瓜瓜`, 25, 173, 65);
+        console.log(user2);
+        user2.showBMI();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function add(n1, n2) {
+            return n1 + n2;
+        }
+        console.log(add(3, 7));
+
+        //匿名函式
+        let add2=function (n1,n2){
+            return n1+n2;
+        }
+        console.log(add2(14,8));
+
+        //請傳送半徑 算出圓面積
+        let add3=function(r){
+            //建立一個常數的值(執行中的值不能改變，一旦改變會出事)
+            const pi=3.14;
+            return pi*r*r;
+        }
+        console.log(add3(7));
+        //箭頭函式(arrow function)
+        let getArea=(r) => {
+            //建立一個常數的值(執行中的值不能改變，一旦改變會出事)
+            const pi=3.14;
+            return pi*r*r;
+        }
+        console.log(add3(7));
+
+    </script>
+</body>
+
+</html>

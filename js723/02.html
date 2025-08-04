@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //建立物件
+        let user = {
+            name: `米茶`,
+            age: 8,
+            //方法成員
+            showMsg: function () {
+                //調用同一個物件中的屬性成員
+                //方法1
+                console.log(`Hi,我是` + user.name + `!`);
+                //方法2 同個物件的屬性可以用this
+                console.log(`Hi,我是` + this.name + `!`);
+            }
+
+        };
+        //取得物件屬性=>物件名稱.屬性名稱
+        console.log(`使用者姓名:${user.name}`);
+        console.log(`使用者年齡:${user.age}歲`);
+        //使用中括號表示法取得物件屬性[屬性名稱]
+
+        console.log(`使用者姓名2：${user['name']}`);
+        console.log(`使用者年齡2：${user["age"]}歲`);
+
+
+        //取得物件方法=>物件名稱.方法名稱()
+        user.showMsg();
+
+        //變更物件的屬性
+        //物件名稱.屬性名稱=屬性質
+        user.age = 17;
+        console.log(user.age);
+        console.log(user["age"]);
+
+        //delete 物件名稱.屬性名稱:
+        delete user.age;
+        
+        //刪除物件的屬性：刪除後再取得此屬性，傳回undefined
+        console.log(user.age);//undefined
+
+
+    </script>
+</body>
+
+</html>

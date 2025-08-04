@@ -37,21 +37,41 @@
 
         function isUpperCase(str) {
             //檢查是否有資料
-            if(str.trim().length==0){//先去掉空白在長度
+            if (str.trim().length == 0) {//先去掉空白在長度
                 return false;
             }
             //if (str[0] === str[0].toUpperCase()) {//左小a右大A
-                return true;
+            return true;
             //} else {
-                return false;
+            return false;
             //}
-            return str[0]===str[0].toUpperCase();//簡化
+            return str[0] === str[0].toUpperCase();//簡化
 
         }
-        console.log(isUpperCase("ABCD")); 		// returns true
-        console.log(isUpperCase("")); 			// returns false
-        console.log(isUpperCase("aBCD"));		// returns false
+        //console.log(isUpperCase("ABCD")); 		// returns true
+        //console.log(isUpperCase("")); 			// returns false
+        //console.log(isUpperCase("aBCD"));		// returns false
         //題目：寫一個函式 isAllUpperCase，檢查所有字母是否為大寫
+
+        function isAllUpperCase(str1) {
+            if (str1.trim().length == 0) {
+                return false;
+            }
+            return str1 === str1.toUpperCase();
+        }
+        //console.log(isAllUpperCase("ABCD"));            // returns true
+        //console.log(isAllUpperCase(""));                // returns false
+        //console.log(isAllUpperCase("ABCDEFGHIJKLm"));   // returns false
+
+        //題目：寫一個函式 position，檢查第一個字母大寫的內容與位置，找不到為-1
+        function position(str2) {
+            if (str2.trim().length == 0) {
+                return false;
+            }
+        }
+
+
+
 
 
 

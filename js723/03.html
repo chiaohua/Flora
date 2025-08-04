@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //方法二：建構子方式建立物件：使用new關鍵字建立一個空物件後，再加入屬性與方法
+        //1.建立一個空物件
+        let user = new Object();
+
+        //2.建立姓名屬性
+        user.name = "米香";
+
+        //3.建立年齡屬性
+        user.age = 8;
+        //4.建立方法
+        user.showMsg = function () {
+            console.log(`hi,我是${user.name}`);
+        }
+
+        //呼叫方法
+        user.showMsg();
+
+        //呼叫物件屬性
+        console.log(user.age);
+        console.log(user.name);
+
+        //更新年齡屬性
+        user.age=18;
+        console.log(user.age);
+
+        //再增加一個物件屬性
+        user.email="ii@gmail.com";
+        console.log(user.email);
+
+        //刪除物件屬性
+        delete user.age;
+        console.log(user);
+
+        user.age=16;
+        console.log(user.age);
+
+        delete user.showMsg;
+        console.log(user);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 選項按鈕:單選(radio) -->
+<form>
+    科目:
+    <input type="radio" name="subject" value="html">HTML
+    <input type="radio" name="subject" value="css">CSS
+    <input type="radio" name="subject" value="js">JS
+    <input type="button" id="btn" value="送出">
+</form>
+<script>
+    let btn=document.querySelector(`#btn`);
+    btn.addEventListener("click",function(){
+        let subject=document.getElementsByName("subject");
+        //console.log(subject);
+        //逐一檢查是否被選取
+        for(let i=0;i<subject.length;i++){
+            if(subject[i].checked){
+                console.log(subject[i].value);
+                break;
+            }
+        }
+    })
+</script>
+</body>
+</html>
